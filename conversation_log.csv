@@ -1,0 +1,56 @@
+actor,message,tool_call,timestamp
+user,cuantos productos tenemos?,,2026-10-06T22:42:11.070262+00:00
+agent,{},list_inventory,2026-10-06T22:42:11.476499+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}]",list_inventory,2026-10-06T22:42:11.482520+00:00
+agent,Tenemos **5 productos** en inventario.,,2026-10-06T22:42:11.678237+00:00
+user,dame el nombre de los productos en existencia,,2026-10-06T22:42:47.073651+00:00
+agent,"Los productos en existencia son:
+
+1. Café arábica
+2. Leche de avena
+3. Vasos de cartón 12oz
+4. Azúcar
+5. Cafe de Mar",,2026-10-06T22:42:47.337110+00:00
+user,cuantos litros de leche tenemos?,,2026-10-06T22:43:02.062280+00:00
+agent,Tenemos **30 litros** de leche de avena.,,2026-10-06T22:43:02.297224+00:00
+user,agrega un nuevo producto,,2026-10-06T22:43:14.887402+00:00
+agent,"¿Qué producto quieres agregar? Necesito el nombre, la cantidad inicial y la unidad de medida (kg, litro, unidad, etc.).",,2026-10-06T22:43:15.142403+00:00
+user,"pumpkin spice, 50 unidades, 1kg",,2026-10-06T22:44:10.747001+00:00
+agent,"{""name"":""Pumpkin spice"",""quantity"":50,""unit"":""kg""}",add_product,2026-10-06T22:44:11.088718+00:00
+tool,"{""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}",add_product,2026-10-06T22:44:11.093677+00:00
+agent,"Listo, agregué **Pumpkin spice** con 50 kg de stock inicial.",,2026-10-06T22:44:11.301856+00:00
+user,muestra la lista de los productos que hay,,2026-10-06T22:46:32.765586+00:00
+agent,{},list_inventory,2026-10-06T22:46:32.988023+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-06T22:46:33.006443+00:00
+agent,"Lista actual de productos:
+
+1. Café arábica – 40 kg
+2. Leche de avena – 30 litros
+3. Vasos de cartón 12oz – 500 unidades
+4. Azúcar – 25 kg
+5. Cafe de Mar – 10 kg
+6. Pumpkin spice – 50 kg",,2026-10-06T22:46:33.375785+00:00
+user,muestra la lista de los productos que hay disponibles,,2026-10-06T22:48:00.495931+00:00
+agent,"Error: RateLimitError: Error code: 429 - {'error': {'message': ""Request too large for model `qwen/qwen3.8-27b` in organization `org_01kx0b1drde8d91twwmsmse0gd` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1866. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"", 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",,2026-10-06T22:48:00.661297+00:00
+user,hay cafe de mar disponible?,,2026-10-06T22:48:18.947550+00:00
+agent,{},list_inventory,2026-10-06T22:48:19.179405+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-06T22:48:19.183605+00:00
+agent,"Error: RateLimitError: Error code: 429 - {'error': {'message': ""Request too large for model `qwen/qwen3.8-27b` in organization `org_01kx0b1drde8d91twwmsmse0gd` service tier `on_demand` on output tokens per minute (OTPM): Limit 1000, Requested 1450. The request's expected output tokens exceed the enforced limit; reduce max_tokens (or the request's expected output) and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"", 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",,2026-10-06T22:48:19.260439+00:00
+user,cuantos productos hay en inventario?,,2026-10-06T22:56:57.277726+00:00
+agent,"Error: NotFoundError: Error code: 404 - {'error': {'message': 'The model `llama-3.1-8b-instant` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'code': 'model_not_found'}}",,2026-10-06T22:56:57.429449+00:00
+user,cuantos productos hay en existencia?,,2026-10-06T22:59:10.046219+00:00
+agent,{},list_inventory,2026-10-06T22:59:10.396588+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-06T22:59:10.419207+00:00
+agent,Hay 6 productos en existencia.,,2026-10-06T22:59:10.754855+00:00
+user,dame el nombre de los productos en existencia,,2026-10-06T22:59:18.502303+00:00
+agent,{},list_inventory,2026-10-06T22:59:18.795715+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-06T22:59:18.800191+00:00
+agent,"Café arábica, Leche de avena, Vasos de cartón 12oz, Azúcar, Café de Mar, Pumpkin spice.",,2026-10-06T22:59:19.151715+00:00
+user,cuanta azucar tenemos?,,2026-10-06T22:59:33.799419+00:00
+agent,{},list_inventory,2026-10-06T22:59:34.305864+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-06T22:59:34.309089+00:00
+agent,Tienes 25 kg de azúcar.,,2026-10-06T22:59:35.136456+00:00
+user,de que producto tenemos menos?,,2026-10-06T22:59:45.121937+00:00
+agent,"{""threshold"":0}",get_low_stock_alerts,2026-10-06T22:59:45.426081+00:00
+tool,[],get_low_stock_alerts,2026-10-06T22:59:45.431502+00:00
+agent,El producto con menor stock es **Café de Mar** (10 kg).,,2026-10-06T22:59:45.840564+00:00
