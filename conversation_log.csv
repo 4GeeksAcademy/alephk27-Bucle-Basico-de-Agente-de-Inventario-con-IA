@@ -54,3 +54,31 @@ user,de que producto tenemos menos?,,2026-10-06T22:59:45.121937+00:00
 agent,"{""threshold"":0}",get_low_stock_alerts,2026-10-06T22:59:45.426081+00:00
 tool,[],get_low_stock_alerts,2026-10-06T22:59:45.431502+00:00
 agent,El producto con menor stock es **Café de Mar** (10 kg).,,2026-10-06T22:59:45.840564+00:00
+user,cuantos productos tenemos?,,2026-10-08T03:44:39.981346+00:00
+agent,{},list_inventory,2026-10-08T03:44:40.375858+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}]",list_inventory,2026-10-08T03:44:40.379922+00:00
+agent,Hay 6 productos en el inventario.,,2026-10-08T03:44:40.752593+00:00
+user,cuantos litros en total de los productos?,,2026-10-08T03:44:46.997153+00:00
+agent,30 litros en total.,,2026-10-08T03:44:47.298946+00:00
+user,de que producto hay menos?,,2026-10-08T03:44:59.030981+00:00
+agent,"{""threshold"":0}",get_low_stock_alerts,2026-10-08T03:44:59.291262+00:00
+tool,[],get_low_stock_alerts,2026-10-08T03:44:59.294849+00:00
+agent,El producto con menos stock es **“Cafe de Mar”** con 10 kg.,,2026-10-08T03:44:59.684915+00:00
+user,quiero agregar un producto,,2026-10-08T03:45:07.175699+00:00
+agent,"Necesito saber el nombre del producto, la unidad de medida y la cantidad inicial que quieres registrar. Por favor, indícame esos datos.",,2026-10-08T03:45:07.645569+00:00
+user,"Nombre: Caramel, Cantidad: 5, Unidad de medida: Litros",,2026-10-08T03:45:42.510296+00:00
+agent,"{""name"":""Caramel"",""quantity"":5,""unit"":""Litros""}",add_product,2026-10-08T03:45:43.021819+00:00
+tool,"{""id"": 7, ""name"": ""Caramel"", ""unit"": ""Litros"", ""quantity"": 5.0}",add_product,2026-10-08T03:45:43.025893+00:00
+agent,Producto añadido: **Caramel** – 5 Litros.,,2026-10-08T03:45:43.276565+00:00
+user,dame la lista de nombres de productos con toda su informacion,,2026-10-08T03:46:02.825431+00:00
+agent,{},list_inventory,2026-10-08T03:46:03.042965+00:00
+tool,"[{""id"": 1, ""name"": ""Café arábica"", ""unit"": ""kg"", ""quantity"": 40.0}, {""id"": 2, ""name"": ""Leche de avena"", ""unit"": ""litro"", ""quantity"": 30.0}, {""id"": 3, ""name"": ""Vasos de cartón 12oz"", ""unit"": ""unidad"", ""quantity"": 500.0}, {""id"": 4, ""name"": ""Azúcar"", ""unit"": ""kg"", ""quantity"": 25.0}, {""id"": 5, ""name"": ""Cafe de Mar"", ""unit"": ""Kg"", ""quantity"": 10.0}, {""id"": 6, ""name"": ""Pumpkin spice"", ""unit"": ""kg"", ""quantity"": 50.0}, {""id"": 7, ""name"": ""Caramel"", ""unit"": ""Litros"", ""quantity"": 5.0}]",list_inventory,2026-10-08T03:46:03.046414+00:00
+agent,"**Lista de productos (nombre, unidad, cantidad):**
+
+1. Café arábica – 40 kg  
+2. Leche de avena – 30 litros  
+3. Vasos de cartón 12oz – 500 unidades  
+4. Azúcar – 25 kg  
+5. Cafe de Mar – 10 kg  
+6. Pumpkin spice – 50 kg  
+7. Caramel – 5 litros",,2026-10-08T03:46:03.455501+00:00
